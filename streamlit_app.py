@@ -13,7 +13,8 @@ st.write(
 
 cnx = st.connection("snowflake")
 session = cnx.session()
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('fruit_name'))
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('fruit_name'),col('search_on'))
+st.stop()
 # st.dataframe(data=my_dataframe, use_container_width=True)
 
 name_on_order = st.text_input('Name on Smoothie')
